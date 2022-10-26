@@ -7,7 +7,7 @@ Para Dessarrolar la prueba en cuestión se usó PHP como lenguaje de programaci�
 - MYSQL >= 5.7
 ## Manual de Instalación (entorno local)
 
-1. Clona o descarga el proyecto del siguiente respositorio: [http://github.com/sjaureguio/choho-api](http://github.com/sjaureguio/choho-api "Clic")
+1. Clona o descarga el proyecto del siguiente respositorio: [https://github.com/sjaureguio/prueba_makingconn.git](https://github.com/sjaureguio/prueba_makingconn.git "Clic")
 2. Desde la consola o terminal, nos ubicamos en nuestro proyecto <code>cd prueba_makingconn/</code>
 3. En la ruta del proyecto, ejecuta los siguientes comandos <br>
     
