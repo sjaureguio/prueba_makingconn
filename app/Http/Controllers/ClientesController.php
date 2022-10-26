@@ -31,7 +31,7 @@ class ClientesController extends Controller
         return new ClienteResource(Cliente::findOrFail($id));
     }
 
-    //store Metodo para crear o editar un cliente
+    // store Metodo para crear o editar un cliente
     public function store(ClienteRequest $request)
     {
         $id = $request->input('id');
@@ -39,12 +39,23 @@ class ClientesController extends Controller
         $cliente->fill($request->all());
         $cliente->save();
 
-        return [
+        return response()->json([
             'success' => true,
             'message' => ($id)
 				? 'Cliente editado con éxito'
 				: 'Cliente registrado con éxito',
             'id' => $cliente->id
-        ];
+		], 201);
+    }
+
+
+    public function destroy($id)
+    {
+        Cliente::destroy($id);
+        
+        return response()->json([
+            'success' => true,
+            'message' => 'OK',
+		], 200);
     }
 }
