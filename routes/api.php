@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+// Controladores propios
+use App\Http\Controllers\ClientesController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::controller(ClientesController::class)->prefix('/v1/clientes')->group(function () {
+    Route::get('', 'records');
+    Route::get('/{id}', 'record');
+    Route::post('', 'store');
+    Route::delete('/{id}', 'destroy');
 });
