@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // Controladores propios
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ReportesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,6 @@ Route::controller(ClientesController::class)->prefix('/v1/clientes')->group(func
     Route::delete('/{id}', 'destroy');
 });
 
-Route::get('/v1/reportes', 'ReportesController@records');
+Route::controller(ReportesController::class)->prefix('/v1/reportes')->group(function () {
+    Route::get('', 'records');
+});
