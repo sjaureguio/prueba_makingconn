@@ -11,5 +11,17 @@ use App\Models\Cliente;
 
 class ClientesController extends Controller
 {
-    
+    // records Metodo para obtener clientes
+    public function records(Request $request)
+    {
+        $records = Cliente::orderBy('nombreComercial');
+
+        $data = new ClientesCollection($records->paginate(20));
+
+        return response()->json([
+            'success' => true,
+            'message' => 'OK',
+			'data' => $data,
+		], 201);
+    }
 }
