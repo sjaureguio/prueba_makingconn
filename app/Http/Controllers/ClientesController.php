@@ -24,4 +24,10 @@ class ClientesController extends Controller
 			'data' => $data,
 		], 201);
     }
+
+    //Metodo para obtener un cliente
+    public function record($id)
+    {
+        return new ClienteResource(Cliente::findOrFail($id));
+    }
 }
