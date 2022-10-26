@@ -23,3 +23,5 @@ Route::controller(ClientesController::class)->prefix('/v1/clientes')->group(func
     Route::post('', 'store');
     Route::delete('/{id}', 'destroy');
 });
+
+Route::get('/v1/reportes', 'ReportesController@records');
